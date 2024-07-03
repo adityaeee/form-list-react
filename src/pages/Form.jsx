@@ -36,7 +36,7 @@ export default function Form() {
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 mt-5 text-start">
                             <label
-                                for="judul"
+                                htmlFor="judul"
                                 className="form-label text-start"
                             >
                                 Judul Buku
@@ -53,7 +53,7 @@ export default function Form() {
                         </div>
                         <div className="mb-3 text-start">
                             <label
-                                for="pengarang"
+                                htmlFor="pengarang"
                                 className="form-label text-start"
                             >
                                 Pengarang
@@ -69,7 +69,7 @@ export default function Form() {
                         </div>
                         <div className="mb-3 text-start">
                             <label
-                                for="deskripsi"
+                                htmlFor="deskripsi"
                                 className="form-label text-start"
                             >
                                 Deskripsi
