@@ -7,20 +7,23 @@ export const BooksProvider = ({ children }) => {
         {
             id: "1",
             judul: "buku 1",
-            pengarang: "jiro",
-            deskripsi: "ini sebuah buku",
+            pengarang: "adit",
+            deskripsi:
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam facilis alias sit maiores minima nihil.",
         },
         {
             id: "2",
             judul: "buku 2",
             pengarang: "jiro",
-            deskripsi: "ini sebuah buku 2",
+            deskripsi:
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam facilis alias sit maiores minima nihil.",
         },
         {
             id: "3",
             judul: "buku 3",
-            pengarang: "jiro",
-            deskripsi: "ini sebuah buku 3",
+            pengarang: "Alex",
+            deskripsi:
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam facilis alias sit maiores minima nihil.",
         },
     ]);
 

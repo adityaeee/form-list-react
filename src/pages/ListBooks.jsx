@@ -35,21 +35,24 @@ export default function Listbook(props) {
     const testDate = days_between(dateNow, dateDumy);
 
     return (
-        <div className="list-group">
-            {books.map((book, index) => (
-                <a
-                    href="#"
-                    className="list-group-item list-group-item-action hover-effect"
-                    aria-current="true"
-                >
-                    <div className="d-flex w-100 justify-content-between">
-                        <h6 className="mb-2">{book.judul}</h6>
+        <>
+            <div className="list-group">
+                {books.map((book, index) => (
+                    <a
+                        key={index}
+                        href="#"
+                        className="list-group-item list-group-item-action hover-effect"
+                        aria-current="true"
+                    >
+                        <div className="d-flex w-100 justify-content-between">
+                            <h6 className="mb-2">{book.judul}</h6>
 
-                        <small>{testDate} days ago</small>
-                    </div>
-                    <p className="mb-1">{book.pengarang}</p>
-                </a>
-            ))}
-        </div>
+                            <small>{testDate} days ago</small>
+                        </div>
+                        <p className="mb-1">{book.pengarang}</p>
+                    </a>
+                ))}
+            </div>
+        </>
     );
 }

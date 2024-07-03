@@ -2,15 +2,23 @@ import React from "react";
 import animation from "../assets/animation/animation-books.json";
 import Lottie from "lottie-react";
 import { useState } from "react";
+import { useBooks } from "../components/BooksContext";
+import { useNavigate } from "react-router";
 
 export default function Form() {
-    const [books, setBook] = useState([
-        {
-            judul: "buku 1",
-            pengarang: "jiro",
-            deskripsi: "ini sebuah buku",
-        },
-    ]);
+    const { addItem } = useBooks();
+    const navigate = useNavigate();
+
+    const [judul, setJudul] = useState("");
+    const [pengarang, setPengarang] = useState("");
+    const [deskripsi, setDeskripsi] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addItem({ judul, pengarang, deskripsi });
+        navigate("/list-books");
+    };
+
     return (
         <div className="container mt-5 pt-5">
             <div className="card form-login ">
@@ -25,7 +33,7 @@ export default function Form() {
                             <Lottie animationData={animation} />
                         </span>
                     </div>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="mb-3 mt-5 text-start">
                             <label
                                 for="judul"
@@ -39,6 +47,8 @@ export default function Form() {
                                 className="form-control"
                                 id="judul"
                                 placeholder="masukkan judul buku"
+                                onChange={(e) => setJudul(e.target.value)}
+                                required
                             ></input>
                         </div>
                         <div className="mb-3 text-start">
@@ -53,6 +63,8 @@ export default function Form() {
                                 type="text"
                                 className="form-control"
                                 id="pengarang"
+                                onChange={(e) => setPengarang(e.target.value)}
+                                required
                             ></input>
                         </div>
                         <div className="mb-3 text-start">
@@ -67,6 +79,8 @@ export default function Form() {
                                 type="text"
                                 className="form-control"
                                 id="deskripsi"
+                                onChange={(e) => setDeskripsi(e.target.value)}
+                                required
                             ></textarea>
                         </div>
 
