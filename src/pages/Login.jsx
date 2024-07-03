@@ -2,7 +2,7 @@ import React from "react";
 import animation from "../assets/animation/animation-login.json";
 import Lottie from "lottie-react";
 
-export default function () {
+export default function Login () {
     return (
         <div className="container  mt-5">
             <div className="card form-login ">
@@ -19,7 +19,7 @@ export default function () {
                     <form>
                         <div className="mb-3 mt-5 text-start">
                             <label
-                                for="exampleInputEmail1"
+                                htmlFor="exampleInputEmail1"
                                 className="form-label text-start"
                             >
                                 Email
@@ -37,7 +37,7 @@ export default function () {
                         </div>
                         <div className="mb-3 text-start">
                             <label
-                                for="exampleInputPassword1"
+                                htmlFor="exampleInputPassword1"
                                 className="form-label"
                             >
                                 Password
