@@ -5,15 +5,26 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import PageNotFound from "./components/PageNotFound";
+import Form from "./pages/Form";
+import { Outlet } from "react-router";
 
 function App() {
-    const [count, setCount] = useState(0);
-
+    const [books, setBook] = useState([
+        {
+            judul: "buku 1",
+            pengarang: "jiro",
+            deskripsi: "ini sebuah buku",
+        },
+        {
+            judul: "buku 2",
+            pengarang: "jiro",
+            deskripsi: "ini sebuah buku 2",
+        },
+    ]);
     return (
         <>
-            {/* <Navbar /> */}
-            {/* <Login /> */}
-            <PageNotFound />
+            <Navbar />
+            <Outlet />
 
             {/* <div>
         <a href="https://vitejs.dev" target="_blank">

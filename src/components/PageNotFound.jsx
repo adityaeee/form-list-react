@@ -1,5 +1,7 @@
+import React from "react";
 import Lottie from "lottie-react";
 import animation from "../assets/animation/animation404.json";
+import { Link } from "react-router-dom";
 
 const PageNotFound = () => {
     return (
@@ -9,9 +11,12 @@ const PageNotFound = () => {
                     <Lottie animationData={animation} />
                 </span>
             </div>
-            <button type="submit" className="btn login-button">
-                Back
-            </button>
+
+            <Link to="/">
+                <button type="submit" className="btn login-button">
+                    &#8656; Back
+                </button>
+            </Link>
         </>
     );
 };
