@@ -7,19 +7,19 @@ export const BooksProvider = ({ children }) => {
         {
             id: "1",
             judul: "buku 1",
-            pengarang: "jiro",
+            pengarang: "jhiro",
             deskripsi: "ini sebuah buku",
         },
         {
             id: "2",
             judul: "buku 2",
-            pengarang: "jiro",
+            pengarang: "jhiro",
             deskripsi: "ini sebuah buku 2",
         },
         {
             id: "3",
             judul: "buku 3",
-            pengarang: "jiro",
+            pengarang: "jhiro",
             deskripsi: "ini sebuah buku 3",
         },
     ]);
