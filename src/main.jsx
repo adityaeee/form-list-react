@@ -9,6 +9,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
+import ListBooks from "./pages/ListBooks.jsx";
 
 const router = createBrowserRouter([
     {
@@ -23,10 +24,10 @@ const router = createBrowserRouter([
                 path: "add-books",
                 element: <Form />,
             },
-            // {
-            //     path: "list-books",
-            //     element: <ListBooks />,
-            // },
+            {
+                path: "list-books",
+                element: <ListBooks />,
+            },
         ],
     },
     {

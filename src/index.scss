@@ -95,3 +95,9 @@ button:focus-visible {
 .login-button:hover {
     background-color: var(--primary-color-dark);
 }
+
+.hover-effect:hover {
+    background-color: #17a2b8; /* Warna latar belakang saat dihover */
+    color: #fff; /* Warna teks saat dihover */
+    border-color: #17a2b8; /* Warna border saat dihover */
+}
