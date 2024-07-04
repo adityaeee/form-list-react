@@ -1,40 +1,37 @@
 import React from "react";
 import { useBooks } from "../components/BooksContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 
 function days_between(date1, date2) {
-    // The number of milliseconds in one day
     const ONE_DAY = 1000 * 60 * 60 * 24;
 
-    // Calculate the difference in milliseconds
     const differenceMs = Math.abs(date1 - date2);
 
-    // Convert back to days and return
     return Math.round(differenceMs / ONE_DAY);
 }
 
 function parseDate(dateStr) {
     const [day, month, year] = dateStr.split("/").map(Number);
-    return new Date(year, month - 1, day); // Konversi string ke objek Date
+    return new Date(year, month - 1, day);
 }
 
 function getCurrentDateFormatted() {
     const now = new Date();
 
-    const day = String(now.getDate()).padStart(2, "0"); // Dapatkan hari dan tambahkan '0' jika perlu
-    const month = String(now.getMonth() + 1).padStart(2, "0"); // Dapatkan bulan (0-11) dan tambahkan '0' jika perlu
-    const year = now.getFullYear(); // Dapatkan tahun
-
+    const day = String(now.getDate()).padStart(2, "0");
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const year = now.getFullYear();
     return `${day}/${month}/${year}`;
 }
 
 export default function Listbook() {
     const { books } = useBooks();
+    const navigate = useNavigate();
     const dateNowStr = getCurrentDateFormatted();
     const dateNow = parseDate(dateNowStr);
-    const dateDumy = new Date("2024-07-01");
+    const dateDumy = new Date("2024-07-04");
     const testDate = days_between(dateNow, dateDumy);
     const [showModal, setShowModal] = useState(false);
     const [selectedBook, setSelectedBook] = useState(null);
@@ -47,6 +44,10 @@ export default function Listbook() {
     const handleClose = () => {
         setShowModal(false);
         setSelectedBook(null);
+    };
+
+    const handleEdit = (id) => {
+        navigate(`/edit-book/${id}`);
     };
 
     return (
@@ -79,13 +80,16 @@ export default function Listbook() {
                 </Modal.Header>
                 <Modal.Body>
                     <p>Author: {selectedBook?.pengarang}</p>
-                    <p>More details about the book can be shown here.</p>
+                    <p>{selectedBook?.deskripsi}</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="warning" onClick={handleClose}>
+                    <Button
+                        variant="warning"
+                        onClick={() => handleEdit(selectedBook?.id)}
+                    >
                         Update
                     </Button>
                 </Modal.Footer>

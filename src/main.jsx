@@ -10,6 +10,7 @@ import { RouterProvider } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import ListBooks from "./pages/ListBooks.jsx";
+import UpdateBook from "./pages/UpdateBook.jsx";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "list-books",
                 element: <ListBooks />,
+            },
+            {
+                path: "edit-book/:id",
+                element: <UpdateBook />,
             },
         ],
     },
