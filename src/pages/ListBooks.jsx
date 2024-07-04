@@ -57,7 +57,7 @@ export default function Listbook() {
                     <div className="list-group">
                         {books.map((book, index) => (
                             <Link
-                                key={index}
+                                key={book}
                                 to="#"
                                 className="list-group-item list-group-item-action hover-effect"
                                 onClick={() => handleShow(book)}

@@ -27,6 +27,8 @@ export const BooksProvider = ({ children }) => {
         },
     ]);
 
+    const [auth, setAuth] = useState(false);
+
     const addItem = (item) => {
         setBooks([...books, item]);
     };
@@ -40,7 +42,7 @@ export const BooksProvider = ({ children }) => {
     };
 
     return (
-        <BooksContext.Provider value={{ books, addItem, editItem }}>
+        <BooksContext.Provider value={{ books, addItem, editItem, auth }}>
             {children}
         </BooksContext.Provider>
     );

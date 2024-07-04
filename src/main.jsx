@@ -14,6 +14,10 @@ import UpdateBook from "./pages/UpdateBook.jsx";
 
 const router = createBrowserRouter([
     {
+        path: "login",
+        element: <Login />,
+    },
+    {
         path: "/",
         element: <App />,
         children: [
@@ -35,10 +39,7 @@ const router = createBrowserRouter([
             },
         ],
     },
-    {
-        path: "login",
-        element: <Login />,
-    },
+
     {
         path: "*",
         element: <PageNotFound />,

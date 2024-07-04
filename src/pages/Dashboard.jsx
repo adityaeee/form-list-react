@@ -1,6 +1,7 @@
 import React from "react";
 import animation from "../assets/animation/animation-hero.json";
 import Lottie from "lottie-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
     return (
